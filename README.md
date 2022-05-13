@@ -14,10 +14,15 @@ docker-compose build --no-cache
 docker-compose up -d; docker-compose ps; docker-compose logs -f
 ```
 ```
-docker-compose up --build -d; docker-compose logs -f
+docker-compose up --build -d; docker-compose ps; docker-compose logs -f
 
 docker-compose exec ssh-server bash
 ```
 
-### ssh access info
+###### docker container ip
+```
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ssh-server
+```
+
+#### ssh access info
 ubuntu / ubuntu
